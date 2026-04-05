@@ -1,0 +1,252 @@
+/* ══════════════════════════════════════════════════════════════
+   TEMA BOLD — Quadra Poliesportiva Condomínio
+   Paleta: Branco · Preto · Amarelo · Laranja
+   Cole este arquivo no mesmo diretório do HTML e adicione no
+   <head>:  <link rel="stylesheet" href="quadra-tema-bold.css">
+   (certifique-se de que esta tag vem APÓS o <style> existente)
+══════════════════════════════════════════════════════════════ */
+
+/* ── VARIÁVEIS DE COR ── */
+:root {
+  --clay:    #08d50b;        /* amarelo muito claro (fundo de tags) */
+  --cream:   #088a05;        /* branco levemente quente (fundo geral) */
+  --court:   #f3f6f2;        /* laranja vibrante */
+  --court-d: #111111;        /* preto (header, botões primários) */
+  --court-l: #fdfdfd;        /* laranja claro (acentos) */
+  --sand:    #939090;        /* amarelo vivo (indicadores) */
+  --sand-d:  #dedcd8;        /* amarelo escuro */
+  --ink:     #f1f1f1;        /* preto puro (texto principal) */
+  --muted:   #faf6f6;        /* cinza escuro (texto secundário) */
+  --line:    #eeebeb;        /* cinza claro (bordas) */
+  --red:     #dc2626;        /* vermelho (cancelar / erro) */
+  --white:   #242222;        /* branco puro (cards) */
+  --radius:  12px;
+}
+
+/* ── BODY ── */
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--ink);
+  border-bottom: 3px solid var(--sand);
+}
+
+header::after {
+  background: rgba(250, 204, 21, 0.08);
+}
+
+.logo-icon {
+  background: var(--court);
+}
+
+.logo-text p,
+.header-user {
+  color: var(--court-l);
+}
+
+.header-user span {
+  color: var(--white);
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border-color: var(--line);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  color: var(--ink);
+  border-bottom: 2px solid var(--sand);
+  padding-bottom: 10px;
+}
+
+/* ── CALENDÁRIO ── */
+.cal-nav {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.cal-nav:hover {
+  background: var(--sand);
+  color: var(--ink);
+  border-color: var(--sand);
+}
+
+.cal-day.today {
+  background: var(--court);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.cal-day.selected {
+  background: var(--ink);
+  color: var(--sand);
+  font-weight: 700;
+}
+
+.cal-day.has-booking::after {
+  background: var(--sand);
+}
+
+.cal-day:hover:not(.empty):not(.past) {
+  background: #fff3d6;
+  color: var(--ink);
+}
+
+/* ── LEGENDA ── */
+.legend-item {
+  color: var(--muted);
+}
+
+/* ── REGRAS ── */
+.rules li::before {
+  color: var(--court);
+}
+
+/* ── PAINEL TÍTULO ── */
+#panelTitle {
+  color: var(--ink);
+}
+
+/* ── FORMULÁRIO ── */
+label {
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  background: var(--cream);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--court);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  outline: none;
+}
+
+/* ── BOTÕES ── */
+.btn-primary {
+  background: var(--court);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #ea6c0a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+}
+
+.btn-danger {
+  color: var(--red);
+  border-color: var(--line);
+}
+
+.btn-danger:hover {
+  background: #0b0b0b;
+  border-color: var(--red);
+}
+
+/* ── SLOTS ── */
+.slots-date-label {
+  color: var(--ink);
+}
+
+.slot.free {
+  background: var(--white);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.slot.free:hover {
+  border-color: var(--court);
+  background: #fefcfc;
+}
+
+.slot.selected-slot {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--sand);
+}
+
+.slot.booked {
+  background: #f3f3f3;
+  border-color: #e5e5e5;
+  color: var(--muted);
+}
+
+.slot.booked.mine {
+  background: #fff7ed;
+  border-color: var(--court-l);
+  color: var(--ink);
+}
+
+/* ── LISTA DE RESERVAS ── */
+.booking-item {
+  background: var(--white);
+  border-color: var(--line);
+  border-left: 4px solid var(--court);
+}
+
+.booking-stripe {
+  background: var(--court);
+}
+
+.booking-apt {
+  background: var(--sand);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── MODAL ── */
+.modal {
+  background: var(--white);
+  border-top: 4px solid var(--court);
+}
+
+.modal h3 {
+  color: var(--ink);
+}
+
+.modal-actions .btn:first-child {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.modal-actions .btn:last-child {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ── TOAST ── */
+#toast {
+  background: var(--ink);
+  color: var(--sand);
+  font-weight: 600;
+  border: 1px solid var(--court);
+}
+
+/* ── ESTADO VAZIO ── */
+.empty-state {
+  color: var(--muted);
+}
+
+/* ── SCROLLBAR CUSTOMIZADA ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb {
+  background: var(--court-l);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--court); }
